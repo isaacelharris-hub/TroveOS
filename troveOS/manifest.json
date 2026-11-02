@@ -1,0 +1,9 @@
+{
+  "name": "troveOS",
+  "short_name": "troveOS",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#15172a",
+  "theme_color": "#15172a",
+  "icons": []
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#15172a">
+  <meta name="description" content="troveOS — a web desktop for your files, notes, and tools">
+  <title>troveOS</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="boot" class="screen" aria-live="polite">
+    <div class="boot-card"><div class="logo">◈</div><h1>troveOS</h1><div class="spinner"></div><p>Starting your workspace…</p></div>
+  </div>
+  <div id="login" class="screen hidden">
+    <form id="login-form" class="login-card">
+      <div class="logo">◈</div><h1>Welcome back</h1><p>Your files stay in this browser.</p>
+      <label for="username">Your name</label><input id="username" autocomplete="username" required>
+      <label for="password">Password <span class="muted">(optional)</span></label><input id="password" type="password" autocomplete="current-password">
+      <button class="primary">Enter troveOS</button>
+    </form>
+  </div>
+  <main id="desktop" class="hidden">
+    <div id="wallpaper" aria-hidden="true"></div>
+    <div id="desktop-icons" aria-label="Desktop icons"></div>
+    <div id="windows"></div>
+    <div id="switcher" class="hidden"></div>
+    <div id="notifications" aria-live="polite"></div>
+    <section id="start-menu" class="glass hidden" aria-label="App launcher">
+      <input id="app-search" placeholder="Search apps…" aria-label="Search apps">
+      <div id="app-list"></div>
+    </section>
+    <section id="quick-panel" class="glass hidden" aria-label="Quick settings">
+      <h3>Quick settings</h3>
+      <button data-action="wallpaper">Change wallpaper</button>
+      <button data-action="theme">Toggle light / dark</button>
+      <button data-action="wifi">Wi-Fi status</button>
+      <p id="quick-status"></p>
+    </section>
+    <nav id="taskbar" aria-label="Taskbar">
+      <button id="start-button" aria-label="Open app launcher">◈</button>
+      <div id="task-apps"></div>
+      <div class="tray">
+        <button id="quick-button" aria-label="Quick settings">◉</button>
+        <span id="battery" title="Battery status">▰</span>
+        <span title="Network status">⌁</span>
+        <button id="clock" aria-label="Open clock"></button>
+      </div>
+    </nav>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
